@@ -1,0 +1,45 @@
+{
+  "name": "browserify-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babelify": "^6.3.0",
+    "browserify": "^11.2.0",
+    "chai": "^3.4.0",
+    "foundation-sites": "^5.5.3",
+    "gulp": "^3.9.0",
+    "gulp-htmlhint": "^0.3.0",
+    "gulp-jscs": "^3.0.1",
+    "gulp-jshint": "^1.11.2",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sass": "^2.0.4",
+    "gulp-server-livereload": "^1.5.3",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.4.2",
+    "gulp-watch": "^4.3.5",
+    "jshint-jsx": "^0.4.1",
+    "jshint-stylish": "^2.0.1",
+    "mocha": "^2.3.3",
+    "node-bourbon": "^4.2.3",
+    "node-font-awesome": "^1.0.2",
+    "node-neat": "^1.7.2",
+    "uglifyify": "^3.0.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.4.0"
+  },
+  "dependencies": {
+    "font-awesome": "^4.4.0",
+    "jquery": "^2.1.4",
+    "moment": "^2.10.6",
+    "normalize.css": "^3.0.3",
+    "underscore": "^1.8.3"
+  }
+}

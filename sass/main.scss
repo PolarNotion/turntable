@@ -1,7 +1,34 @@
 // Put any @imports here
 // See Readme for a list of supported ones
-@import 'font-awesome';
 
 body {
-  background: #e2ebf3;
+  background: #E5998C;
+}
+
+.spinner-container {
+
+  width: 1000px;
+  margin: 0 auto;
+
+  ul {
+
+    padding: 0px;
+    margin: 0px;
+
+    li {
+
+      list-style-type: none;
+      display:  none;
+
+      img {
+        
+        width: 100%;
+
+      }
+    }
+
+    li.active {
+      display: block;
+    }
+  }
 }

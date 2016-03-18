@@ -109,7 +109,7 @@ gulp.task('hint:html', function() {
     .pipe(htmlhint.failReporter());
 });
 
-gulp.task('lint', ['style:js', 'hint:js', 'hint:html']);
+// gulp.task('lint', ['style:js', 'hint:js', 'hint:html']);
 
 gulp.task('watch', function() {
   watch('./sass/**/*.scss', function () {  
@@ -138,7 +138,7 @@ gulp.task('server', ['default'], function () {
 gulp.task('default', ['sass',
                       'fonts',
                       'normalize',
-                      'lint',
+                      //'lint',
                       'browserify',
                       'browserify-test']);
 

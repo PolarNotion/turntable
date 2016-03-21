@@ -7,34 +7,68 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var $listItems = (0, _jquery2['default'])('.spinner-container>ul').children();
-var $spinner = (0, _jquery2['default'])('.spinner-container');
+// variable declarations
+var $listItems = (0, _jquery2['default'])('.turntable>ul').children();
+var $turntable = (0, _jquery2['default'])('.turntable');
 var sections = [];
+var axisValue = (0, _jquery2['default'])('.turntable').data('axis');
 
-var divideContainer = function divideContainer(images) {
+// splits container based on
+// amount of li's in turntable
+function divideContainer(images) {
 
-  var initialWidth = $spinner.width();
-  var divider = images.length;
-  var sectionWidth = initialWidth / divider;
+  var initialLength,
+      dividend = images.length;
 
+  if (axisValue === 'y') {
+    initialLength = $turntable.height();
+  } else {
+    initialLength = $turntable.width();
+  }
+
+  var sectionLength = initialLength / dividend;
+
+  // creates array of value pairs with min and max ranges
   for (var j = 0; j < images.length; j++) {
     sections[j] = {
-      min: sectionWidth * j,
-      max: sectionWidth + sectionWidth * j,
+      min: sectionLength * j,
+      max: sectionLength + sectionLength * j,
       index: j
     };
   }
-};
+}
 
-divideContainer($listItems);
+//loads images one at a time on page load
+function appendImages(callback) {
+  $listItems.each(function () {
+    (0, _jquery2['default'])(this).append('<img src="' + (0, _jquery2['default'])(this).data("imgSrc") + '">');
+  });
+}
 
-$spinner.on("mousemove", function (e) {
+appendImages();
+
+// divides container once image is loaded
+(0, _jquery2['default'])("li:first-child>img", $turntable).load(function () {
+  (0, _jquery2['default'])(this).parent().addClass('active');
+  divideContainer($listItems);
+});
+
+// finds mouse position and appends body
+// based on location
+$turntable.on("mousemove", function (e) {
 
   var offset = (0, _jquery2['default'])(this).offset();
-  var relX = e.pageX - offset.left;
+  var position = undefined;
 
+  if (axisValue === 'y') {
+    position = e.pageY - offset.top;
+  } else {
+    position = e.pageX - offset.left;
+  }
+
+  // loop through array and find correct range pair
   _jquery2['default'].each(sections, function () {
-    if (relX >= this.min && relX <= this.max) {
+    if (position >= this.min && position <= this.max) {
       $listItems.removeClass('active');
       $listItems.eq(this.index).addClass("active");
     }

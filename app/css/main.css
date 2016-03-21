@@ -1,18 +1,18 @@
 body {
   background: #E5998C; }
 
-.spinner-container {
-  width: 1000px;
+.turntable {
+  max-width: 1000px;
   margin: 0 auto; }
-  .spinner-container ul {
+  .turntable ul {
     padding: 0px;
     margin: 0px; }
-    .spinner-container ul li {
+    .turntable ul li {
       list-style-type: none;
       display: none; }
-      .spinner-container ul li img {
+      .turntable ul li img {
         width: 100%; }
-    .spinner-container ul li.active {
+    .turntable ul li.active {
       display: block; }
 
 /*# sourceMappingURL=main.css.map */

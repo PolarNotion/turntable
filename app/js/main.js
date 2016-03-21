@@ -12,6 +12,7 @@ var $listItems = (0, _jquery2['default'])('.turntable>ul').children();
 var $turntable = (0, _jquery2['default'])('.turntable');
 var sections = [];
 var axisValue = (0, _jquery2['default'])('.turntable').data('axis');
+var offset = (0, _jquery2['default'])('.turntable').offset();
 
 // splits container based on
 // amount of li's in turntable
@@ -39,13 +40,11 @@ function divideContainer(images) {
 }
 
 //loads images one at a time on page load
-function appendImages(callback) {
+(function appendImages(callback) {
   $listItems.each(function () {
     (0, _jquery2['default'])(this).append('<img src="' + (0, _jquery2['default'])(this).data("imgSrc") + '">');
   });
-}
-
-appendImages();
+})();
 
 // divides container once image is loaded
 (0, _jquery2['default'])("li:first-child>img", $turntable).load(function () {
@@ -57,15 +56,12 @@ appendImages();
 // based on location
 $turntable.on("mousemove", function (e) {
 
-  var offset = (0, _jquery2['default'])(this).offset();
   var position = undefined;
-
   if (axisValue === 'y') {
     position = e.pageY - offset.top;
   } else {
     position = e.pageX - offset.left;
   }
-
   // loop through array and find correct range pair
   _jquery2['default'].each(sections, function () {
     if (position >= this.min && position <= this.max) {

@@ -5,6 +5,7 @@ let $listItems = $('.turntable>ul').children();
 let $turntable = $('.turntable');
 let sections = [];
 let axisValue = $('.turntable').data('axis');
+let offset = $('.turntable').offset();
 
 // splits container based on 
 // amount of li's in turntable
@@ -32,15 +33,13 @@ function divideContainer(images){
 }
 
 //loads images one at a time on page load
-function appendImages(callback) {
+(function appendImages(callback) {
   $listItems.each(function(){
     $(this).append('<img src="' + 
       $(this).data("imgSrc") +
       '">');
   });
-}
-
-appendImages();
+})();
 
 // divides container once image is loaded
 $( "li:first-child>img", $turntable ).load(function() {
@@ -51,16 +50,13 @@ $( "li:first-child>img", $turntable ).load(function() {
 // finds mouse position and appends body
 // based on location
 $turntable.on("mousemove", function(e) {
-
-  let offset = $(this).offset();
-  let position;
-
+    
+  let position; 
   if( axisValue === 'y' ) {
     position = e.pageY - offset.top;
   } else {
     position = e.pageX - offset.left;
   }
-
   // loop through array and find correct range pair
   $.each(sections, function(){
     if(position >= this.min && position <= this.max) {
@@ -68,6 +64,6 @@ $turntable.on("mousemove", function(e) {
       $listItems.eq(this.index).addClass("active");
     }
   });
-  
+
 });
  

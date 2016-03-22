@@ -1,7 +1,6 @@
 # Turntable jQuery Plugin
 ***
-***
-This plugin will flip through images as your mouse sweeps across a container
+A jQuery plugin that will flip through a list of images as your mouse sweeps across a container
 
 ###Usage
 ***

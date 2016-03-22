@@ -55,6 +55,6 @@ $('#mySpinnyContainer').turntable({'axis': 'y'});
 ```
  The plugin will default to x if no option is provided. 
 
-###Dependancies
+###Dependencies
 ***
 jQuery

@@ -2,12 +2,12 @@
 <html>
 <head>
   <title>Hello, World</title>
-  <link rel="stylesheet" type="text/css" href="css/normalize.css">
-  <link rel="stylesheet" type="text/css" href="css/main.css">
+<!--   <link rel="stylesheet" type="text/css" href="css/normalize.css">
+ -->  <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-  
-  <div class="turntable" data-axis="">
+
+  <div id="turntable" class="turntable">
     <ul>
       <li data-img-src="./images/0.jpg"></li>
       <li data-img-src="./images/1.jpg"></li>
@@ -27,9 +27,21 @@
       <li data-img-src="./images/15.jpg"></li>
       <li data-img-src="./images/16.jpg"></li>
       <li data-img-src="./images/17.jpg"></li>
+      <li data-img-src="./images/0.jpg"></li>
     </ul>
   </div>
 
+  <!-- jQuery CDN -->
+  <script   src="https://code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="   crossorigin="anonymous"></script>
+  <!-- Turntable jQuery Plugin -->
   <script src="js/main.js"></script>
+  
+  <!-- Plugin Use Case -->
+  <script type="text/javascript">
+
+    $('#turntable').turntable({axis: 'x'});
+
+  </script>
+
 </body>
 </html>

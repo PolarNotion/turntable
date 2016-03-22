@@ -64,7 +64,7 @@ gulp.task('browserify', function() {
     .pipe(source('./main.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
-    // .pipe(uglify())
+    .pipe(uglify())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./app/js'));
 });
@@ -78,7 +78,7 @@ gulp.task('browserify-test', function() {
     .pipe(source('./tests.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
-    // .pipe(uglify())
+    .pipe(uglify())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./spec/'));
 });

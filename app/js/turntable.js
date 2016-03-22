@@ -59,7 +59,7 @@
     // based on location
     return $turntable.on("mousemove", function (e) {
       var offset = $(this).offset();
-      var position = undefined;
+      var position = undefined
       if (settings.axis === 'y') {
         position = e.pageY - offset.top;
       } else {
@@ -73,10 +73,10 @@
         }
       });
     });
-  };
+  }
 
   $.fn.turntable.defaults = {
     axis: 'x'
-  };
+  }
 
 })(jQuery);

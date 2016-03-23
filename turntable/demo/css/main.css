@@ -1,16 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700);
 .turntable {
   margin: 0px; }
-  .turntable ul {
-    padding: 0px;
-    margin: 0px; }
-    .turntable ul li {
-      list-style-type: none;
-      display: none; }
-      .turntable ul li img {
-        width: 100%; }
-    .turntable ul li.active {
-      display: block; }
+.turntable ul {
+  padding: 0px;
+  margin: 0px; }
+.turntable ul li {
+  list-style-type: none;
+  display: none; }
+.turntable ul li img {
+  width: 100%; }
+.turntable ul li.active {
+  display: block; }
 
 body, h1, h2, h3, h4, h5, h6, p, a, td, li, .btn {
   font-family: 'Lato', Helvetica, sans-serif;
@@ -236,7 +236,10 @@ a.text-white:hover {
   -o-transition: color 0.3s linear;
   transition: color 0.3s linear; }
 
-.navbar-nav > li > a:hover {
+.navbar-nav > li > a:hover, 
+.navbar-nav > li > a:focus,
+.navbar-nav > li > a:visited,
+.navbar-nav > li > a:active{
   opacity: .5;
   background-color: transparent; }
 

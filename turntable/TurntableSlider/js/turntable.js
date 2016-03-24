@@ -1,4 +1,10 @@
-
+/*
+ * TurntableSlider
+ * v 1.0
+ *
+ * Copyright (c) 2016 Polar Notion
+ * Licensed under the MIT license.
+ */
 (function($){
 
   $.fn.turntable = function(options){

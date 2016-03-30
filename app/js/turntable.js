@@ -73,15 +73,7 @@
           position = t.pageY - offset.top;
         } else {
           position = t.pageX - offset.left;
-        }
-        // loop through array and find correct range pair
-        $.each(sections, function () {
-          if (position >= this.min && position <= this.max) {
-            $listItems.removeClass('active');
-            $listItems.eq(this.index).addClass("active");
-          }
-        });
-      });   
+        }  
     } else {
       return $turntable.on("mousemove", function (e) {
         var offset = $(this).offset();
@@ -91,15 +83,15 @@
         } else {
           position = e.pageX - offset.left;
         }
-        // loop through array and find correct range pair
-        $.each(sections, function () {
-          if (position >= this.min && position <= this.max) {
-            $listItems.removeClass('active');
-            $listItems.eq(this.index).addClass("active");
-          }
-        });
-      });   
     }
+    // loop through array and find correct range pair
+    $.each(sections, function () {
+      if (position >= this.min && position <= this.max) {
+        $listItems.removeClass('active');
+        $listItems.eq(this.index).addClass("active");
+      }
+    });
+  });   
   }
 
   $.fn.turntable.defaults = {

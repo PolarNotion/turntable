@@ -12,16 +12,3 @@ $(function() {
     }
   });
 });
-
-$(window).scroll(function(){
-  if ($(window).scrollTop() > 64) {
-    $(".navbar").addClass("navbar-white");
-    $(".navbar-btn").removeClass("btn-white-outline");
-    $(".navbar-btn").addClass("btn-primary");
-  }
-  else {
-    $(".navbar").removeClass("navbar-white");
-    $(".navbar-btn").removeClass("btn-primary");
-    $(".navbar-btn").addClass("btn-white-outline");
-  }
-});

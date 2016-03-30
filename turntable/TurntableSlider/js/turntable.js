@@ -1,11 +1,10 @@
 /*
  * TurntableSlider
- * v 1.0
+ * v 1.0.1
  *
  * Copyright (c) 2016 Polar Notion
  * Licensed under the MIT license.
  */
-
 (function($){
 
   $.fn.turntable = function(options){
@@ -23,7 +22,6 @@
         settings = $.extend({}, $.fn.turntable.defaults, options),
         $turntable = $(this),
         sections = [];
-
 
     // splits container based on
     // amount of li's in turntable
@@ -68,6 +66,16 @@
       divideContainer($listItems);
     });
 
+    // loop through array and find correct range pair
+    var applyClasses = function(sections, position) {
+      $.each(sections, function () {
+          if (position >= this.min && position <= this.max) {
+            $listItems.removeClass('active');
+            $listItems.eq(this.index).addClass("active");
+          }
+        });
+      };
+
     // finds mouse position and appends body
     // based on location
     if(mobilecheck()){
@@ -82,12 +90,7 @@
           position = t.pageX - offset.left;
         }
         // loop through array and find correct range pair
-        $.each(sections, function () {
-          if (position >= this.min && position <= this.max) {
-            $listItems.removeClass('active');
-            $listItems.eq(this.index).addClass("active");
-          }
-        });
+        applyClasses(sections, position);
       });   
     } else {
       return $turntable.on("mousemove", function (e) {
@@ -98,13 +101,8 @@
         } else {
           position = e.pageX - offset.left;
         }
-        // loop through array and find correct range pair
-        $.each(sections, function () {
-          if (position >= this.min && position <= this.max) {
-            $listItems.removeClass('active');
-            $listItems.eq(this.index).addClass("active");
-          }
-        });
+        applyClasses(sections, position);
+        
       });   
     }
   }

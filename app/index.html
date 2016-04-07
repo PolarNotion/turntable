@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html prefix="og: http://ogp.me/ns#">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Turntable Slider</title>
+  <title>Turntable.js : A Responsive JQuery Slider</title>
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <meta property="og:title" content="Turntable.js : A Responsive JQuery Slider" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://polarnotion.github.io/turntable/" />
+  <meta property="og:image" content="" />
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./css/animate.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/main.css">
 
 </head>
@@ -26,7 +31,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">TurntableSlider</a>
+      <a class="navbar-brand" href="#">Turntable.js</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -35,7 +40,7 @@
         <li>
           <a href="#install">Install</a>
         </li>
-        <a href="./TurntableSlider.zip" class="btn btn-white-outline navbar-btn">Download</a>
+        <a href="https://s3.amazonaws.com/turntable-slider/TurntableSlider.zip" class="btn btn-white-outline navbar-btn">Download</a>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -76,9 +81,9 @@
           <li data-img-src="images/planter/plant28.JPG"></li>
           <li data-img-src="images/planter/plant1.JPG"></li>
         </ul>
-        <div class="containt.jpgt-center">
-          <h1 class="text-color">TurntableSlider</h1>
-          <p class="text-color lead">A jQuery plugin</p>
+        <div class="container-center">
+          <h1 class="text-color">Turntable.js</h1>
+          <p class="text-color lead">A Responsive JQuery Slider</p>
         </div>
       </div>
     </div>
@@ -87,10 +92,14 @@
   <section class="pad-section background-white position-99">
     <div class="container">
       <h2 id="examples">What is this?</h2>
-      <p class="lead">TurntableSlider is a jQuery plugin that will let you flip through a list of images as your mouse sweeps across a container. Think of it like a flipbook made with Javascript instead of paper. All you need is a set of images, and jQuery.</p>
+      <p class="lead">Turntable.js is a responsive JQuery slider that will let you rotate through a list of images as your mouse (or finger) sweeps across a container. Think of it like a flipbook made with Javascript, instead of paper. All you need is a set of images, and jQuery.</p>
+
+      <p class="lead">
+        It's a fresh alternative to the typical 'click-to-slide' JQuery gallery.
+      </p>
 
       <h2 id="install">Installation</h2>
-      <p class="lead">The installation process is fairly simple. Just download TurntableSlider and include turntable.min.js in your javascritpt file or at the bottom of your html document, and call the turntable function on whatever list of images you want to flip through. Oh, and don't forget the CSS. We've included a minified file, or you can just copy and paste the CSS here into your custom stylesheet. Easy peasy.</p>
+      <p class="lead">The installation process is fairly simple. <b>Download Turntable.js</b> and include turntable.min.js in your javascript file or at the bottom of your html document, and <b>call the turntable function</b> on whatever list of images you want to flip through. Oh, and don't forget the CSS. We've included a minified file, or you can just copy and paste the CSS here into your custom stylesheet. Easy peasy.</p>
       <div>
 
         <!-- Nav tabs -->
@@ -112,7 +121,7 @@
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane active" id="html">
             <pre class="prettyprint pad">
-              <code>
+
 &lt;div id="myTurntable" class="turntable"&gt;
   &lt;ul&gt;
     &lt;li data-img-src="images/myPic1.jpg"&gt;&lt;/li&gt;
@@ -131,16 +140,17 @@
     &lt;li data-img-src="images/myPic14.jpg"&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;
-              </code>
             </pre>
           </div>
           <div role="tabpanel" class="tab-pane" id="js">
             <pre class="prettyprint pad language-java">
+
 $('#myTurntable').turntable();
             </pre>
           </div>
           <div role="tabpanel" class="tab-pane" id="css">
-            <pre class="prettyprint pad">
+            <pre class="prettyprint pad language-java">
+
 .turntable {
   margin: 0px; 
 }
@@ -165,9 +175,12 @@ $('#myTurntable').turntable();
       </div>
 
       <h2 id="settings">Settings</h2>
-      <p class="lead">TurntableSlider will accept an object as a parameter. You can decide if you want to flip through the images as your mouse moves along the X or Y axis of the container. You can pass in the object when you call the plugin like this.</p>
+      <p class="lead">Turntable.js will accept an object as a parameter. You can decide if you want to flip through the images as your mouse moves along the X or Y axis of the container. You can pass in the object when you call the plugin like this.</p>
       <pre class="prettyprint pad language-java">
-$('#mySpinnyContainer').turntable({axis: 'y'});
+
+$('#mySpinnyContainer').turntable(
+  {axis: 'y'}
+);
       </pre>
       <p class="lead">The plugin will default to the X axis if no option is provided.</p>
       <br>
@@ -175,22 +188,29 @@ $('#mySpinnyContainer').turntable({axis: 'y'});
     </div>
   </section>
 
-<footer class="text-center">
-  <div class="container">
-    <a href="http://polarnotion.com/" class="text-white"> © Polar Notion</a>
-  </div>
-</footer>
+  <footer class="text-center">
+    <div class="container">
+      <iframe src="https://ghbtns.com/github-btn.html?user=polarnotion&repo=turntable&type=star&count=true" frameborder="0" scrolling="0" width="80px" height="20px"></iframe>
+      <iframe src="https://ghbtns.com/github-btn.html?user=polarnotion&type=follow&count=true&size=small" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+      <br>
+      <br>
+      <p>
+        <a href="http://polarnotion.com/?ref=turntable" class="text-white" target="_blank">
+          Polar Notion
+          <br>
+          <em>Go Boldly Forward</em>
+        </a>
+      </p>
+    </div>
+  </footer>
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script type="text/javascript" src="./js/bootstrap.min.js"></script>
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-<script type="text/javascript" src="./js/main.js"></script>
-<script type="text/javascript" src="./js/general.js"></script>
-<script type="text/javascript">
-  $('#turntable').turntable({axis: 'x'});
-</script>
-
-
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./js/main.js"></script>
+  <script type="text/javascript">
+    $('#turntable').turntable({axis: 'x'});
+  </script>
 
 </body>
 </html>

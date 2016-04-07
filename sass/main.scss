@@ -277,13 +277,17 @@ a.text-white:hover {
   padding-top: 21px;
   padding-bottom: 21px;
   -webkit-transition: color 0.3s linear;
-    -moz-transition: color 0.3s linear;
-    -ms-transition: color 0.3s linear;
-    -o-transition: color 0.3s linear;
-    transition: color 0.3s linear;
+  -moz-transition: color 0.3s linear;
+  -ms-transition: color 0.3s linear;
+  -o-transition: color 0.3s linear;
+  transition: color 0.3s linear;
+  &:focus{
+    background-color: #FF6A5C; 
+    color: white;
+  }
 }
 
-.navbar-nav > li > a:hover {
+.navbar-nav > li > a:hover{
   opacity: .5;
   background-color: transparent;
 }

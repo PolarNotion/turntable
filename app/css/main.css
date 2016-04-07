@@ -235,6 +235,10 @@ a.text-white:hover {
   -ms-transition: color 0.3s linear;
   -o-transition: color 0.3s linear;
   transition: color 0.3s linear; }
+  .navbar-nav > li > a:focus,
+  .navbar-brand:focus {
+    background-color: #FF6A5C;
+    color: white; }
 
 .navbar-nav > li > a:hover {
   opacity: .5;

@@ -57,7 +57,7 @@ The plugin accepts one setting, the axis object. You can decide if you want to f
 
 ```javascript
 $('#mySpinnyContainer').turntable(
-  {'axis': 'y'
+  {'axis': 'y'}
 );
 ```
  The plugin will default to x if no option is provided. 

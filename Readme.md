@@ -1,4 +1,4 @@
-# Turntable jQuery Plugin
+# Turntable.js :: A Responsive JQuery Slider
 ***
 A jQuery plugin that will flip through a list of images as your mouse sweeps across a container
 

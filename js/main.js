@@ -63,12 +63,12 @@
     // loop through array and find correct range pair
     var applyClasses = function(sections, position) {
       $.each(sections, function () {
-          if (position >= this.min && position <= this.max) {
-            $listItems.removeClass('active');
-            $listItems.eq(this.index).addClass("active");
-          }
-        });
-      };
+        if (position >= this.min && position <= this.max) {
+          $listItems.removeClass('active');
+          $listItems.eq(this.index).addClass("active");
+        }
+      });
+    };
 
     // finds mouse position and appends body
     // based on location

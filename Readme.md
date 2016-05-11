@@ -53,14 +53,29 @@ There is very minimal css for the slider, but is necessary for its function. Fee
 
 ###Settings
 ***
-The plugin accepts one setting, the axis object. You can decide if you want to flip through the images as your mouse moves along the x or y axis of the container. You can pass the options in when you call the plugin like this.
+The plugin accepts the following settings:
 
 ```javascript
 $('#mySpinnyContainer').turntable(
-  {'axis': 'y'}
+  {
+    'axis': 'y',
+    'touch': true,
+    'mouse': true,
+    'slider': false,
+    'sliderSelector': '#turntable-slider'
+  }
 );
 ```
- The plugin will default to x if no option is provided. 
+
+ * axis: Decide if you want to flip through the images as your mouse/finger moves along the x or y axis of the container. The plugin will default to x if no option is provided.
+ 
+ * mouse: Enable/disable flipping through images via mouse movements. The plugin will default to true if no option is provided.
+ 
+ * touch: Enable/disable flipping through images via touch movements. The plugin will default to true if no option is provided.
+ 
+ * slider: Enable/disable flipping through images via slider movements. The plugin will default to false if no option is provided.
+ 
+ * sliderSelector: Define the selector for the slider(s) that will control flipping through images. If the "slider" option is set to false, the slider(s) found using this selector will never be enabled. The plugin will default to "#turntable-slider" if no option is provided.
 
 ###Dependencies
 ***

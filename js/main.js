@@ -1,6 +1,6 @@
 /*
  * TurntableSlider
- * v 1.0.1
+ * v 1.1.1
  *
  * Copyright (c) 2016 Polar Notion
  * Licensed under the MIT license.
@@ -21,6 +21,7 @@
     var $listItems = $('ul', this).children(),
         settings = $.extend({}, $.fn.turntable.defaults, options),
         $turntable = $(this),
+        $slider = $turntable.find(settings.sliderSelector),
         sections = [];
 
     // splits container based on
@@ -81,7 +82,6 @@
     };
       
     function initializeSlider() {
-      var $slider = $turntable.find(settings.sliderSelector);
       var lastSection = sections[sections.length - 1];
       
       $slider.attr("min", 0);

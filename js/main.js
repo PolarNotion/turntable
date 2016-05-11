@@ -21,7 +21,7 @@
     var $listItems = $('ul', this).children(),
         settings = $.extend({}, $.fn.turntable.defaults, options),
         $turntable = $(this),
-        $slider = $turntable.find(settings.sliderSelector),
+        $slider = $(settings.sliderSelector),
         sections = [];
 
     // splits container based on

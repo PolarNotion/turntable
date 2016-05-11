@@ -209,7 +209,12 @@ $('#mySlider').turntable(
   <script type="text/javascript" src="./js/bootstrap.min.js"></script>
   <script type="text/javascript" src="./js/main.js"></script>
   <script type="text/javascript">
-    $('#turntable').turntable({axis: 'x'});
+    $('#turntable').turntable({
+      axis: 'x',
+      mouse: false,
+      touch: false,
+      slider: false
+    });
   </script>
 
 </body>

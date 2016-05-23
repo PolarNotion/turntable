@@ -41,6 +41,7 @@
         };
       }
 
+      // reverses direction
       if (settings.reverse === true) {
         // reverse array
         sections.reverse();
@@ -81,7 +82,15 @@
 
     // finds mouse position and appends body
     // based on location
-    if(mobilecheck()){
+    if (settings.axis === 'scroll'){
+      return $(window).scroll(function(){
+        var offset = $turntable.offset();
+        offset.bottom = offset.top + $turntable.height();
+        var position = $(window).scrollTop() - offset.top/2;
+        console.log(position);
+        applyClasses(sections, position);
+      });
+    } else if(mobilecheck()){
       return $turntable.on("touchmove", function (e) {
         e.preventDefault();
         var offset = $(this).offset();

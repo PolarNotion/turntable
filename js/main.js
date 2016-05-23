@@ -23,8 +23,9 @@
 
       var initialLength,
           dividend = images.length;
-
-      if (settings.axis === 'y' || settings.axis === 'scroll') {
+      if (settings.axis === 'scroll') {
+        initialLength = $(window).height();
+      } else if (settings.axis === 'y') {
         initialLength = $turntable.height();
       } else {
         initialLength = $turntable.width();
@@ -83,14 +84,30 @@
     // finds mouse position and appends body
     // based on location
     if (settings.axis === 'scroll'){
+      
+
+
+
       return $(window).scroll(function(){
+        var scrollStart;
+        if (settings.scrollStart === 'bottom') {
+          scrollStart = $turntable.height();
+        } else if (settings.scrollStart === 'middle') {
+          scrollStart = $turntable.height() / 2;
+        } else {
+          // scroll start is top or other unusable value
+          scrollStart = 0;
+        }
         var offset = $turntable.offset();
-        offset.bottom = offset.top + $turntable.height();
-        var position = $(window).scrollTop() - offset.top/2;
-        console.log(position);
+        console.log('scrollTop:', $(window).scrollTop());
+        console.log('scrollStart:', scrollStart);
+        var position = offset.top - ( $(window).scrollTop() - scrollStart );
+        console.log('position:', position);
         applyClasses(sections, position);
       });
+
     } else if(mobilecheck()){
+
       return $turntable.on("touchmove", function (e) {
         e.preventDefault();
         var offset = $(this).offset();
@@ -104,7 +121,9 @@
         // loop through array and find correct range pair
         applyClasses(sections, position);
       });   
+
     } else {
+
       return $turntable.on("mousemove", function (e) {
         var offset = $(this).offset();
         var position;
@@ -114,14 +133,15 @@
           position = e.pageX - offset.left;
         }
         applyClasses(sections, position);
-        
-      });   
+      });  
+
     }
-  };
+  }; //end if
 
   $.fn.turntable.defaults = {
     axis: 'x',
-    reverse: false
+    reverse: false,
+    scrollStart: 'middle'
   };
 
 })(jQuery);

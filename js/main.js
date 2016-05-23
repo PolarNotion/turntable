@@ -84,30 +84,24 @@
     // finds mouse position and appends body
     // based on location
     if (settings.axis === 'scroll'){
-      
-
-
-
+      // scroll
       return $(window).scroll(function(){
         var scrollStart;
         if (settings.scrollStart === 'bottom') {
           scrollStart = $turntable.height();
-        } else if (settings.scrollStart === 'middle') {
-          scrollStart = $turntable.height() / 2;
-        } else {
-          // scroll start is top or other unusable value
+        } else if (settings.scrollStart === 'top') {
           scrollStart = 0;
+        } else {
+          // scroll start is middle or other unusable value
+          scrollStart = $turntable.height() / 2;
         }
         var offset = $turntable.offset();
-        console.log('scrollTop:', $(window).scrollTop());
-        console.log('scrollStart:', scrollStart);
         var position = offset.top - ( $(window).scrollTop() - scrollStart );
-        console.log('position:', position);
         applyClasses(sections, position);
       });
 
     } else if(mobilecheck()){
-
+      // touch
       return $turntable.on("touchmove", function (e) {
         e.preventDefault();
         var offset = $(this).offset();
@@ -123,7 +117,7 @@
       });   
 
     } else {
-
+      // mouseover
       return $turntable.on("mousemove", function (e) {
         var offset = $(this).offset();
         var position;

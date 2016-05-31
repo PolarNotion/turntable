@@ -146,8 +146,10 @@ hr.hr-short {
 }
 
 .turntable-container {
-  max-width: 700px;
-  margin: 0 auto;
+  #turntable2 { 
+    max-width: 700px;
+    margin: 0 auto;
+  }
 }
 
 .beta-form .form-control {

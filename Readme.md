@@ -56,10 +56,11 @@ There is very minimal css for the slider, but is necessary for its function. Fee
 The plugin accepts one setting, the axis object. You can decide if you want to flip through the images as your mouse moves along the x or y axis of the container. You can pass the options in when you call the plugin like this.
 
 ```javascript
-$('#mySpinnyContainer').turntable(
-  {'axis': 'y'}
-);
-```
+$('#mySpinnyContainer').turntable({
+  axis: 'x, y, or scroll',
+  reverse: boolean, // true or false, will reverse the array of images
+  scrollStart: 'top, middle, or bottom', // only necessary if axis = 'scroll'
+});```
  The plugin will default to x if no option is provided. 
 
 ###Dependencies

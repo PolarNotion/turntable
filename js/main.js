@@ -56,7 +56,7 @@
     //loads images one at a time on page load
     (function appendImages(callback) {
       $listItems.each(function () {
-        $(this).append('<img src="' + $(this).data("imgSrc") + '">');
+        $(this).html('<img src="' + $(this).data("imgSrc") + '">');
       });
     })();
 

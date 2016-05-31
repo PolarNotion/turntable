@@ -40,7 +40,7 @@
         <li>
           <a href="#install">Install</a>
         </li>
-        <a href="https://s3.amazonaws.com/turntable-slider/TurntableSlider.zip" class="btn btn-white-outline navbar-btn">Download</a>
+        <a href="https://s3.amazonaws.com/turntable-slider/Turntable.zip" class="btn btn-white-outline navbar-btn">Download</a>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -49,7 +49,6 @@
   <header class="position-9">
     <div class="container">
       
-        
       <div class="turntable-container">
         <div class="header-overlay turntable" id="turntable">
           <ul>
@@ -75,6 +74,7 @@
         <h1 class="text-color">Turntable.js</h1>
         <p class="text-color lead">A Responsive JQuery Slider</p>
       </div>
+      
     </div>
   </header>
 
@@ -200,16 +200,18 @@ $('#myTurntable').turntable();
       </div>
 
       <h2 id="settings">Settings</h2>
-      <p class="lead">Turntable.js will accept an object as a parameter. You can decide if you want to flip through the images as your mouse moves along the X or Y axis of the container. You can pass in the object when you call the plugin like this.</p>
+      <p class="lead">Turntable.js will accept an object as a parameter. There are three keys you can use to customize the slider. You can decide if you want to flip through the images as your mouse moves along the X or Y axis of the container, or as you scroll down the page using <b>axis</b>. If you want to reverse the direction it goes through the images, pass in <b>reverse: true</b>. You can also decide where the container will start to turn while you scroll down the page. Try playing around with the different options until you find what works best for you. You can pass in the object when you call the plugin like this -</p>
       <pre class="prettyprint pad language-java">
 
-$('#mySpinnyContainer').turntable(
-  {axis: 'y'}
-);
+$('#mySpinnyContainer').turntable({
+  axis: 'x, y, or scroll',
+  reverse: boolean, // true or false, will reverse the array of images
+  scrollStart: 'top, middle, or bottom', // only necessary if axis = 'scroll'
+});
       </pre>
       <p class="lead">The plugin will default to the X axis if no option is provided.</p>
       <br>
-      <p>v 1.0</p>
+      <p>v 1.1</p>
     </div>
   </section>
 
@@ -235,7 +237,7 @@ $('#mySpinnyContainer').turntable(
   <script type="text/javascript" src="./js/main.js"></script>
   <script type="text/javascript">
     $('#turntable').turntable({axis: 'x', reverse: true});
-    $('#turntable2').turntable({axis: 'scroll'})
+    $('#turntable2').turntable({axis: 'scroll'});
   </script>
 
 </body>

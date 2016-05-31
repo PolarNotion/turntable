@@ -20,9 +20,9 @@
     };
 
     var $listItems = $('ul', this).children(),
-        settings   = $.extend({}, $.fn.turntable.defaults, options),
+        settings = $.extend({}, $.fn.turntable.defaults, options),
         $turntable = $(this),
-        sections   = [];
+        sections = [];
 
     // splits container based on
     // amount of li's in turntable

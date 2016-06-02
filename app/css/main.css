@@ -18,9 +18,12 @@ body, h1, h2, h3, h4, h5, h6, p, a, td, li, .btn {
   -moz-osx-font-smoothing: grayscale;
   color: #4A4A4A; }
 
+body {
+  background-color: #FFFFFB; }
+
 h1 {
-  font-size: 45px;
-  line-height: 55px; }
+  font-size: 40px;
+  line-height: 60px; }
 
 h2 {
   font-size: 35px;
@@ -113,7 +116,7 @@ hr.hr-short {
 .featured-image {
   margin-bottom: -200px; }
 
-.turntable-container #turntable2 {
+.turntable-container {
   max-width: 700px;
   margin: 0 auto; }
 

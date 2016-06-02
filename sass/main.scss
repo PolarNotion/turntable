@@ -25,9 +25,13 @@ body, h1, h2, h3, h4, h5, h6, p, a, td, li, .btn {
   color: #4A4A4A;
 }
 
+body {
+  background-color: #FFFFFB;
+}
+
 h1 {
-  font-size: 45px;
-  line-height: 55px;
+  font-size: 40px;
+  line-height: 60px;
 }
 
 h2 {
@@ -150,10 +154,8 @@ hr.hr-short {
 }
 
 .turntable-container {
-  #turntable2 { 
-    max-width: 700px;
-    margin: 0 auto;
-  }
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .beta-form .form-control {

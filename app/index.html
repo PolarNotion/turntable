@@ -53,12 +53,14 @@
   <header class="pad-section position-9">
     <div class="container">
       <div class="container-center text-center">
-        <h1 class="text-color">Responsive JQuery Slider</h1>
-        <p class="text-color lead">Turntable.js, a flipbook made with Javascript</p>
+        <h1 class="text-color">Turntable.js 2.0<br>Responsive JQuery Slider</h1>
+        <em class="text-color lead">"a flipbook made with Javascript"</em>
       </div>
 
+      <br>
+
       <div class="turntable-container">
-        <div id="turntable2" class="turntable">
+        <div id="turntable_1" class="turntable">
           <ul>
             <li data-img-src="images/planter/plant1.JPG"></li>
             <li data-img-src="images/planter/plant2.JPG"></li>
@@ -97,8 +99,47 @@
 
   <section class="pad-section background-white position-99">
     <div class="container">
+      <h2 id="examples">What's <em>new</em> in Version 2.0</h2>
+      <p class="lead">Our goal with Turntable.js is to shake-up the standard approach to web sliders, JQuery sliders, and image viewers. The average JQuery slider is clunky and relys on the 'click' behavior. Knowing how precious user clicks are, our slider leverages gesture behaviors, requiring little 'commitment' from the viewers. Version 2.0 builds on the previous cursor/finger movements and add support for triggering the slider on scroll. Scroll down to see the example below in action.</p>
+
+      <div class="turntable-container">
+        <div class="header-overlay turntable" id="turntable_2">
+          <ul>
+            <li data-img-src="images/planter/plant1.JPG"></li>
+            <li data-img-src="images/planter/plant2.JPG"></li>
+            <li data-img-src="images/planter/plant3.JPG"></li>
+            <li data-img-src="images/planter/plant4.JPG"></li>
+            <li data-img-src="images/planter/plant5.JPG"></li>
+            <li data-img-src="images/planter/plant6.JPG"></li>
+            <li data-img-src="images/planter/plant7.JPG"></li>
+            <li data-img-src="images/planter/plant8.JPG"></li>
+            <li data-img-src="images/planter/plant9.JPG"></li>
+            <li data-img-src="images/planter/plant10.JPG"></li>
+            <li data-img-src="images/planter/plant11.JPG"></li>
+            <li data-img-src="images/planter/plant12.JPG"></li>
+            <li data-img-src="images/planter/plant13.JPG"></li>
+            <li data-img-src="images/planter/plant14.JPG"></li>
+            <li data-img-src="images/planter/plant15.JPG"></li>
+            <li data-img-src="images/planter/plant16.JPG"></li>
+            <li data-img-src="images/planter/plant17.JPG"></li>
+            <li data-img-src="images/planter/plant18.JPG"></li>
+            <li data-img-src="images/planter/plant19.JPG"></li>
+            <li data-img-src="images/planter/plant20.JPG"></li>
+            <li data-img-src="images/planter/plant21.JPG"></li>
+            <li data-img-src="images/planter/plant22.JPG"></li>
+            <li data-img-src="images/planter/plant23.JPG"></li>
+            <li data-img-src="images/planter/plant24.JPG"></li>
+            <li data-img-src="images/planter/plant25.JPG"></li>
+            <li data-img-src="images/planter/plant26.JPG"></li>
+            <li data-img-src="images/planter/plant27.JPG"></li>
+            <li data-img-src="images/planter/plant28.JPG"></li>
+            <li data-img-src="images/planter/plant1.JPG"></li>
+          </ul>
+        </div>
+      </div>
+
       <h2 id="examples">What is this?</h2>
-      <p class="lead">Turntable.js is a responsive JQuery slider that will let you rotate through a list of images as your mouse (or finger) sweeps across a container. Think of it like a flipbook made with Javascript, instead of paper. All you need is a set of images, and jQuery.</p>
+      <p class="lead">Turntable.js is a responsive JQuery slider that will let you rotate through a list of images as your mouse (or finger) sweeps across a container. Think of it like a flipbook made with Javascript, instead of paper. All you need is a set of images, and JQuery.</p>
 
       <p class="lead">
         It's a fresh alternative to the typical 'click-to-slide' JQuery gallery.
@@ -224,7 +265,7 @@ $('#mySpinnyContainer').turntable({
           </a>
         </li>
         <li>
-          <a href="https://www.reddit.com/r/web_design/comments/4fhx16/turntablejs_a_responsive_jquery_slider_that_will/" target="_blank">
+          <a href="https://www.reddit.com/r/web_design/comments/4fhx16/turntablejs_a_responsive_JQuery_slider_that_will/" target="_blank">
             <i class="fa fa-reddit-alien"></i> Reddit
           </a>
         </li>
@@ -235,7 +276,7 @@ $('#mySpinnyContainer').turntable({
         </li>
       </ul>
       <br>
-      <p>v 1.1</p>
+      <p>v 2.0</p>
     </div>
   </section>
 
@@ -326,13 +367,18 @@ $('#mySpinnyContainer').turntable({
     </div>
   </footer>
 
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
   <script type="text/javascript" src="./js/bootstrap.min.js"></script>
   <script type="text/javascript" src="./js/main.js"></script>
   <script type="text/javascript">
-    $('#turntable').turntable({axis: 'x', reverse: true});
-    $('#turntable2').turntable({axis: 'scroll'});
+    $('#turntable_1').turntable({
+      axis: 'x',
+      reverse: true
+    });
+    $('#turntable_2').turntable({
+      axis: 'scroll'
+    });
   </script>
 
   <script>

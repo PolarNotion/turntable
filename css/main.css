@@ -49,6 +49,9 @@ pre.prettyprint {
 a:hover {
   color: #545454; }
 
+section.pad-section:first-of-type {
+  padding-top: 0px; }
+
 .navbar {
   background-color: #FF6A5C; }
 
@@ -173,7 +176,7 @@ hr.hr-short {
   padding: 20px; }
 
 .pad-section {
-  padding: 120px 20px; }
+  padding: 100px 20px; }
 
 .container {
   max-width: 1000px; }

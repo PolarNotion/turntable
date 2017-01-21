@@ -73,7 +73,7 @@
           position = t.pageY - offset.top;
         } else {
           position = t.pageX - offset.left;
-        }  
+        }
     } else {
       return $turntable.on("mousemove", function (e) {
         var offset = $(this).offset();
@@ -91,7 +91,7 @@
         $listItems.eq(this.index).addClass("active");
       }
     });
-  });   
+  });
   }
 
   $.fn.turntable.defaults = {

@@ -91,7 +91,7 @@
         }
         // loop through array and find correct range pair
         applyClasses(sections, position);
-      });   
+      });
     } else {
       return $turntable.on("mousemove", function (e) {
         var offset = $(this).offset();
@@ -102,8 +102,8 @@
           position = e.pageX - offset.left;
         }
         applyClasses(sections, position);
-        
-      });   
+
+      });
     }
   }
 

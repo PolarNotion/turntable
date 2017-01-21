@@ -21,7 +21,7 @@
     var $listItems = $('ul', this).children(),
         settings = $.extend({}, $.fn.turntable.defaults, options),
         $turntable = $(this),
-        $slider = $(settings.sliderSelector),
+        $slider = $turntable.find(settings.sliderSelector),
         sections = [];
 
     // splits container based on
@@ -47,7 +47,7 @@
           index: j
         };
       }
-      
+
       if (settings.slider) {
         initializeSlider();
       }
@@ -80,26 +80,25 @@
         }
       });
     };
-      
+
     function initializeSlider() {
       var lastSection = sections[sections.length - 1];
-      
-      $slider.attr("min", 0);
-      $slider.attr("max", lastSection.max);
-      $slider.attr("step", lastSection.max - lastSection.min);
-      
-      //Set data-attrs for easy third party integration.
-      $turntable.attr("data-max", lastSection.max);
-      $turntable.attr("data-step", lastSection.max - lastSection.min);
-    }
-    
-    if (settings.slider) {
-      $turntable.on("input change", settings.sliderSelector, function (e) {
+      var section_step = lastSection.max - lastSection.min;
+      var spin_step = Math.floor(360 / sections.length);
+
+      $slider.attr("min", -180);
+      $slider.attr("max", 180);
+      $slider.attr("step", spin_step);
+
+      $turntable.on("input", settings.sliderSelector, function () {
         var position = $(this).val();
-        applyClasses(sections, position);
+        var section_num = (Number(position) + 180) / spin_step;
+        var current_section_step = Math.floor(section_num * section_step);
+
+        applyClasses(sections, current_section_step);
       });
     }
-    
+
     // finds mouse position and appends body
     // based on location
     if(settings.touch && mobilecheck()){
@@ -115,7 +114,7 @@
         }
         // loop through array and find correct range pair
         applyClasses(sections, position);
-      });   
+      });
     } else if (settings.mouse) {
       return $turntable.on("mousemove", function (e) {
         var offset = $(this).offset();
@@ -126,8 +125,7 @@
           position = e.pageX - offset.left;
         }
         applyClasses(sections, position);
-        
-      });   
+      });
     }
   };
 

@@ -68,7 +68,7 @@
     })();
 
     // divides container once image is loaded
-    $("li:first-child>img", $turntable).load(function () {
+    $("li:first-child>img", $turntable).on("load", function () {
       $(this).parent().addClass('active');
       divideContainer($listItems);
     });

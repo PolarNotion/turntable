@@ -2,13 +2,13 @@
 ***
 A jQuery plugin that will flip through a list of images as your mouse sweeps across a container
 
-###Usage
+### Usage
 ***
-All image sources need to be included in a data attribute on the li, and the image tags will be dynamically added. Make sure it is called data-img-src, followed by the link to your images. 
+All image sources need to be included in a data attribute on the li, and the image tags will be dynamically added. Make sure it is called data-img-src, followed by the link to your images.
 
 There is very minimal css for the slider, but is necessary for its function. Feel free to copy and paste this code into your css file, or include a link for this.
 
-#####HTML
+##### HTML
 
 ```html
 <div id="myTurntable" class="turntable">
@@ -23,12 +23,12 @@ There is very minimal css for the slider, but is necessary for its function. Fee
 </div>
 ```
 
-#####Javascript
+##### Javascript
 
 ```javascript
   $('#myTurntable').turntable();
 ```
-#####CSS
+##### CSS
 
 ```css
 .turntable {
@@ -51,7 +51,7 @@ There is very minimal css for the slider, but is necessary for its function. Fee
 }
 ```
 
-###Settings
+### Settings
 ***
 The plugin accepts one setting, the axis object. You can decide if you want to flip through the images as your mouse moves along the x or y axis of the container. You can pass the options in when you call the plugin like this.
 
@@ -61,8 +61,8 @@ $('#mySpinnyContainer').turntable({
   reverse: boolean, // true or false, will reverse the array of images
   scrollStart: 'top, middle, or bottom', // only necessary if axis = 'scroll'
 });```
- The plugin will default to x if no option is provided. 
+ The plugin will default to x if no option is provided.
 
-###Dependencies
+### Dependencies
 ***
 jQuery

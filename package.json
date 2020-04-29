@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "font-awesome": "^4.4.0",
-    "jquery": "^2.1.4",
+    "jquery": "^3.5.0",
     "moment": "^2.10.6",
     "normalize.css": "^3.0.3",
     "underscore": "^1.8.3"
